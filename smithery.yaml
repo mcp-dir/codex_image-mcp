@@ -1,0 +1,33 @@
+# Smithery configuration for Codex Imagem
+# Schema: https://smithery.ai/docs/build/project-config
+# Remote HTTP MCP — server hosted at https://api.mcp.ai/p_codex_image
+
+name: codex_image-mcp
+displayName: "Codex Imagem"
+description: >
+  Gere imagens pela sua própria assinatura do ChatGPT (Plus, Pro ou Team), sem gastar créditos de API. Conecte o login do Codex uma vez e peça a imagem em linguagem natural, o arquivo fica salvo na sua conta do mcp.ai.
+
+version: 0.1.0
+license: MIT
+homepage: https://github.com/mcp-dir/codex_image-mcp
+repository: https://github.com/mcp-dir/codex_image-mcp
+
+tags:
+  - codex_image
+  - brazil
+  - horizontal
+  - read-only
+
+# Remote HTTP MCP — sem startCommand local (servidor já hospedado)
+startCommand:
+  type: http
+  url: https://api.mcp.ai/p_codex_image
+
+auth:
+  type: oauth2
+  resourceMetadataUrl: https://api.mcp.ai/p_codex_image/.well-known/oauth-protected-resource
+  fallback:
+    type: agent-auth
+    description: >
+      Para clientes sem OAuth 2.1. O agente expõe uma tool authenticate(token).
+      Usuário gera o JWT em https://app.mcp.ai/agent-auth e cola no chat.

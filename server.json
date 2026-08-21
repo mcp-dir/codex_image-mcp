@@ -1,0 +1,17 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.mcp-dir/codex_image-mcp",
+  "title": "Codex Imagem",
+  "description": "Generate images with your own ChatGPT subscription (Plus, Pro or Team), without spending API credits",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/mcp-dir/codex_image-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.mcp.ai/p_codex_image"
+    }
+  ]
+}
